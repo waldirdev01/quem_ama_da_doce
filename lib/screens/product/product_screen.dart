@@ -22,6 +22,17 @@ class ProductScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(product.name),
           centerTitle: true,
+          actions: [
+            Consumer<UserManager>(builder: (_, userManager, __) {
+              if (userManager.adminEnabled) {
+                return IconButton(
+                    onPressed: () => Navigator.of(context)
+                        .pushReplacementNamed('/edit_product'),
+                    icon: Icon(Icons.edit));
+              }
+              return Container();
+            })
+          ],
         ),
         backgroundColor: Colors.white,
         body: ListView(
@@ -106,16 +117,23 @@ class ProductScreen extends StatelessWidget {
                                 primaryColor,
                               ),
                             ),
-                            onPressed: product.selectedSize != null ? (){
-                              if(userManager.isLoggedIn){
-                                context.read<CartManager>().addToCart(product);
-                                Navigator.of(context).pushNamed('/cart');
-                              } else {
-                                Navigator.of(context).pushNamed('/login');
-                              }
-                            } : null,
-                            child: Text(userManager.isLoggedIn ?
-                              'Adicionar ao Carrinho': 'Faça login para comprar.', //: 'Entre para Comprar',
+                            onPressed: product.selectedSize != null
+                                ? () {
+                                    if (userManager.isLoggedIn) {
+                                      context
+                                          .read<CartManager>()
+                                          .addToCart(product);
+                                      Navigator.of(context).pushNamed('/cart');
+                                    } else {
+                                      Navigator.of(context).pushNamed('/login');
+                                    }
+                                  }
+                                : null,
+                            child: Text(
+                              userManager.isLoggedIn
+                                  ? 'Adicionar ao Carrinho'
+                                  : 'Faça login para comprar.',
+                              //: 'Entre para Comprar',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,

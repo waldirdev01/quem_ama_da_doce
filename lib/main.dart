@@ -6,6 +6,7 @@ import 'package:quem_ama_da_doce/models/products/product_manager.dart';
 import 'package:quem_ama_da_doce/screens/base/base_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:quem_ama_da_doce/screens/cart/cart_screen.dart';
+import 'package:quem_ama_da_doce/screens/edit_product_screen/edit_product_screen.dart';
 import 'package:quem_ama_da_doce/screens/login_screen/login_screen.dart';
 import 'package:quem_ama_da_doce/screens/product/product_screen.dart';
 import 'package:quem_ama_da_doce/screens/signup/signup_screen.dart';
@@ -64,6 +65,10 @@ class MyApp extends StatelessWidget {
         home: BaseScreen(),
         onGenerateRoute: (RouteSettings settings) {
           switch (settings.name) {
+            case '/edit_product':
+              return MaterialPageRoute(
+                  builder: (_) => EditProductScreen()
+              );
             case '/login':
               return MaterialPageRoute(builder: (_) => LoginScreen());
             case '/signup':
