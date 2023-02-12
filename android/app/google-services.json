@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "985411130831",
+    "project_id": "quem-ama-da-doce-8d1fb",
+    "storage_bucket": "quem-ama-da-doce-8d1fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985411130831:android:798ab7b7d96575b6ed2eba",
+        "android_client_info": {
+          "package_name": "com.waldirdev01.quem_ama_da_doce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985411130831-qr7a2ujekqd2o8c7ci0g5b32hamrn30u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm58DJ9Z2rzCOcr3PMgyCHogZdY-e3Bsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985411130831-qr7a2ujekqd2o8c7ci0g5b32hamrn30u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
